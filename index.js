@@ -171,7 +171,8 @@ var newMiniReel = {
 function authenticate() {
 
     if ((!username) || (!password)) {
-        return q.reject('You must set the username and password variables at the top of this script.');
+        console.log('\nUsage:\n  node index.js [username] [password]\n');
+        process.exit(1);
     }
 
     var loginOpts = {
@@ -333,7 +334,9 @@ authenticate()
     console.log('Preview link:');
     console.log(' ',expPreviewUrl + exp.id);
     console.log('');
+    process.exit(0);
 })
 .catch(function(err){
     console.log('Failed with: ' + err);
+    process.exit(1);
 });
