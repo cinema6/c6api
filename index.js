@@ -9,8 +9,8 @@
  * */
 var server = 'https://staging.cinema6.com', // or 'https://portal.cinema6.com' for production
     appKey = 'apidemo', // for grouping collateral (uploaded splash images)
-    username = null,
-    password = null,
+    username = process.argv[2],
+    password = process.argv[3],
     splashImg = 'breaking.jpg', // path to splash image
     uploadUrl = server + '/api/collateral/files/' + appKey, // for uploading splash images
     authUrl   = server + '/api/auth/login',
@@ -170,7 +170,7 @@ var newMiniReel = {
  * */
 function authenticate() {
 
-    if ((username === null) || (password === null)) {
+    if ((!username) || (!password)) {
         return q.reject('You must set the username and password variables at the top of this script.');
     }
 

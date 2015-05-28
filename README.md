@@ -9,9 +9,7 @@ Demonstrate the Cinema6 api
 
 *Running the test script..*
 
-1. Update the ```username``` and ```password``` variables in the script.
-
-2. Install the npm dependencies
+1. Install the npm dependencies
 
   ```bash
   $ npm install
@@ -20,5 +18,5 @@ Demonstrate the Cinema6 api
 3. Run the script.
 
   ```bash
-  $ node index.js
+  $ node index.js <username> <password>
   ```
